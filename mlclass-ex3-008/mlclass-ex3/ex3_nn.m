@@ -73,12 +73,15 @@ pause;
 %  Randomly permute examples
 rp = randperm(m);
 
-for i = 1:m
+for i = 1:20 %原本不是20是m
     % Display 
     fprintf('\nDisplaying Example Image\n');
     displayData(X(rp(i), :));
 
     pred = predict(Theta1, Theta2, X(rp(i),:));
+    if pred == 10
+    	pred = 0;
+    end
     fprintf('\nNeural Network Prediction: %d (digit %d)\n', pred, mod(pred, 10));
     
     % Pause

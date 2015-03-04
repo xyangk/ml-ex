@@ -31,8 +31,13 @@ X = [ones(m, 1) X];
 %       
 
 
-
-
+[val,ind]=max(sigmoid(X * all_theta'),[], 2);
+p = ind;
+%for i =1:length(p)
+%	if p(i) == 10
+%		p(i) = 0;
+%	end
+%end
 
 
 
