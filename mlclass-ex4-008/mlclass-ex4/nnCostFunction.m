@@ -92,7 +92,7 @@ J = J+lambda/(2*m)*(sum(sum(Theta2(:,2:end).^2))+sum(sum(Theta1(:,2:end).^2)));
 %part2 backpropagation
 
 delta3 = h - ym; %5000 * 10  %%%%%%%%%%%%%%  h  or  hm
-delta2 = delta3 * Theta2(:,2:end) .* sigmoidGradient(z_2); %5000*25
+delta2 = delta3 * Theta2(:,2:end) .* sigmoidGradient(z_2); %5000*25 should be z_2,not a_2 or a_2_temp
 
 Delta2 = 1.0/m * delta3' * a_2_temp; % 10* 26
 Delta1 = 1.0/m * delta2' * X_1; % 25 * 401
